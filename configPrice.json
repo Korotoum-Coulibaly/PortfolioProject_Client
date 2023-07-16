@@ -1,0 +1,32 @@
+{
+    "packs": [
+      {
+        "id_pack": 1,
+        "price": 6
+      },
+      {
+        "id_pack": 2,
+        "price": 13
+      },
+      {
+        "id_pack": 3,
+        "price": 22
+      },
+      {
+        "id_pack": 4,
+        "price": 8
+      },
+      {
+        "id_pack": 5,
+        "price": 36
+      },
+      {
+        "id_pack": 6,
+        "price": 57
+      },
+      {
+        "id_pack": 2,
+        "price": 8
+      }
+    ]
+  }

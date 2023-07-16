@@ -1,0 +1,177 @@
+
+*{
+    margin : 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Container */
+.container{
+    display: flex;
+    height: 600px;
+    width: 800px;
+    border: 1px;
+    margin: auto;
+    margin-top: 50px;
+    box-shadow: 10px 10px 20px rgb(150, 150, 152);
+    border-radius: 20px;
+}
+p {
+    bottom: 100%;
+    font-size: 12px;
+}
+a {
+    text-decoration: none;
+    color: #1473E6;
+    display: block;
+}
+a:hover {
+    color: #DB4002;
+}
+
+/* Login form */
+.form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 50%;
+    align-items: center;
+    background-color: white(200, 35, 35);
+    border-radius:20px;
+    margin: 10%;
+    margin-top: 10px;
+}
+input[type="text"], input[type="email"], input[type="password"]  {
+    height: 30px;
+}
+
+.select {
+    font-size: small;
+    border-radius: 15px;
+    border: 1px solid black;
+    outline: none;
+    padding: 12px;
+    width: 65%;
+}
+.form h2{
+    font-size: 18px;
+    margin: 30px;
+}
+
+.box{
+    padding: 12px;
+    width: 65%;
+    margin: 15px;
+    border: 1px solid black;
+    outline: none;
+    border-radius: 15px;
+}
+
+
+#submit{
+    padding: 12PX ;
+    width: 40%;
+    margin-top: 10%;
+    background-color: #094A99;
+    color: white;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+}
+
+#submit:hover{
+    cursor: pointer;
+    background-color: #1473E6;
+}
+
+.loginbutton{
+    padding: 12PX 30px;
+    width: 70%;
+    margin-top: 1%;
+    background-color: #DB4002;
+    color: white;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+}
+
+.loginbutton:hover{
+    cursor: pointer;
+    background-color: #fb4d08;
+} 
+.logomicro{
+    width: 20px;
+    height: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Right side */
+.side{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    background-color: white;
+    border-radius: 20px;
+}
+
+/* ---- responsive ----*/
+
+@media (max-width: 780px) {
+    body {
+        margin: 30px;
+        margin-top: 100px;
+        justify-content: center;
+        align-items: center;
+    }
+    .form {
+        
+        flex-direction: column;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+    .side {
+        display: none;
+        position: relative;
+        bottom: 320px;
+        width: 50px;
+        height: 50px;
+        right: -7px;
+    }
+    .container {
+        width: auto;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .box{
+     
+        width: auto;
+       
+    }
+    .form h2{
+       
+        font-weight: lighter;
+        align-items: unset;
+        justify-content: unset;
+    }
+    #submit{
+        padding: auto;
+        width: auto;
+        margin-top: 15%;
+        justify-content: center;
+        justify-items: center;
+        
+    }
+    .loginbutton{
+        padding: 12PX 20px;
+        width: 90%;
+        margin-top: auto;
+    }
+}
+    

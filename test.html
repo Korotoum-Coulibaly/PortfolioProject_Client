@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Récupération de données via une API</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+  <h1>Données de l'API</h1>
+  <div id="content1"></div>
+
+  <script>
+    // Fonction pour récupérer les données via l'API
+    function getData() {
+      $.ajax({
+        url: 'https://generateur.cloudsteroids.com/public/api/packs',
+        method: 'GET',
+        dataType: 'json',
+        success: function(data) {
+          // Stockage des données de l'API dans un tableau de packs
+          var packs = [];
+
+          // Parcourir les données de l'API
+          for (var i = 0; i < data.length; i++) {
+            var packData = data[i];
+            var pack = {
+              id_pack: packData.id_pack,
+              libelle: packData.libelle,
+              sub_categorie_id: packData.sub_categorie_id,
+              microsoft_price: packData.microsoft_price,
+              sale_price: packData.sale_price,
+              dollar_cost: packData.dollar_cost,
+              created_at: packData.created_at,
+              updated_at: packData.updated_at
+            };
+            packs.push(pack);
+          }
+
+          // Sélectionner l'élément où le contenu sera généré
+          var contentDiv = document.getElementById('content1');
+
+          // Parcourir l'objet et générer le contenu HTML pour chaque élément
+          packs.forEach(function(item) {
+            // Créer un bouton avec la classe 'licence' et l'ID 'button1'
+            var button = document.createElement('button');
+            button.className = 'licence';
+            button.id = item.id_pack;
+            button.setAttribute('data-price', item.sale_price);
+            button.setAttribute('data-name', item.libelle);
+            button.addEventListener('click', updatedisplay, false);
+
+            // Ajouter le libellé comme contenu du bouton
+            var libelle = document.createElement('h1');
+            libelle.className = 'nomLicence';
+            libelle.textContent = item.libelle;
+
+            // Ajouter le slogan
+            var slogan = document.createElement('h3');
+            slogan.className = 'slogan';
+            slogan.textContent = 'Web and mobile apps and services';
+
+            // Ajouter les éléments au bouton
+            button.appendChild(libelle);
+            button.appendChild(slogan);
+
+            // Ajouter le bouton au contenu de la page
+            contentDiv.appendChild(button);
+          });
+
+        },
+        error: function() {
+          alert('Erreur lors de la récupération des données de l\'API.');
+        }
+      });
+    }
+
+    // Fonction pour mettre à jour l'affichage du bouton lorsqu'il est cliqué
+   function updatedisplay(event) {
+  var button = event.target;
+  
+  if (button.classList.contains('licence')) {
+    var currentStyle = button.getAttribute('style');
+
+    if (currentStyle && currentStyle === 'outline: 3px solid #1473E6;') {
+      button.removeAttribute('style');
+    } else {
+      button.setAttribute('style', 'outline: 3px solid #1473E6;');
+    }
+  }
+}
+
+
+    // Appeler la fonction pour récupérer les données au chargement de la page
+    getData();
+  </script>
+</body>
+</html>

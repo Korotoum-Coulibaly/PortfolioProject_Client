@@ -1,0 +1,50 @@
+                  fetch('https://generateur.cloudsteroids.com/public/api/users_choice', {
+                        method: 'POST',
+                        headers: {
+                          'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(dataObject)
+                  })
+                      .then(response => response.json())
+                  .then(responseData => {
+                        // Gérer la réponse de l'API si nécessaire
+                        console.log(responseData);
+
+                        // Vérifier si l'enregistrement a réussi
+                        if (responseData.success) {
+                          // Afficher une fenêtre d'alerte en cas de succès
+                          alert('Enregistrement réussi !');
+                        } else {
+                          // Afficher une fenêtre d'alerte en cas d'échec
+                          alert('Erreur lors de l\'enregistrement ! Veuillez réessayer.');
+                        }
+                      })
+                  .catch(error => {
+                        console.error(error);
+                        // Afficher une fenêtre d'alerte en cas d'erreur
+                        alert('Une erreur est survenue lors de l\'enregistrement. Veuillez réessayer.');
+                      });
+
+                                // Appliquer des styles CSS pour le paragraphe
+                                newParagraph.style.margin = '10px'; // Ajouter une marge inférieure entre chaque nouvel élément
+
+
+                                // Mettre à jour le paragraphe à chaque changement de quantité
+                                quantityInput.addEventListener('input', function() {
+                                  updateParagraph();
+                                });
+
+                              // Appeler la fonction updateParagraph pour mettre à jour le paragraphe initial
+                              updateParagraph();
+
+
+                            // Créer un conteneur div pour regrouper les éléments
+                            var containerDiv = document.createElement('div');
+                            containerDiv.appendChild(newParagraph);
+                            containerDiv.appendChild(subtractButton);
+                            containerDiv.appendChild(quantityInput);
+                            containerDiv.appendChild(addButton);
+
+                            // Ajouter le nouvel élément de paragraphe à la div
+                            divElement.appendChild(containerDiv);
+                          }

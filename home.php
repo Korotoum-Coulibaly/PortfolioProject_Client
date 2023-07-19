@@ -30,7 +30,7 @@
         <div id="full"></div>
         <header>
                 <nav>
-                      <div class=""><img src="images/d.png" alt="" class="title" width="90%" height="100%"> </div>
+                      <div class=""><img src="images\caroussel2.png" alt="" class="title" width="90%" height="100%"> </div>
                       <div class=" row">
                             <div class="col-sm-6"><a href="liste.php" id="lien" > <i class="fa fa-save" aria-hidden="true" class="icon"> Gerer vos devis</i></a></div>
                             <div class="col-sm-6"><a href="logout.php" id="lien" > <i class="fa fa-sign-out" aria-hidden="true"> Deconnexion</i></a></div>
@@ -40,10 +40,55 @@
                 </nav>
             
         </header>
+        <section class="caroussel">
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="images/caroussel1.png" class="d-block w-100" alt="..." height="600px">
+      <div class="carousel-caption d-none d-md-block">
+        
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="images/caroussel3.png" alt="..." height="600px" width="100%">
+      <div class="carousel-caption d-none d-md-block">
        
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="images/caroussel4.png" alt="..." height="600px">
+      <div class="carousel-caption d-none d-md-block">
+        
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+      </section>
 
-      <section class="container">
+      <section class="super container">
 
+        <div class="info">
+            <input style="padding: 30px" type="text" name="" id="" disabled placeholder="Vous êtes déjà client Cloud Steroids? Connectez-vous au générateur de devis pour créer, enregistrer et visualiser des estimations de coûts.">
+        </div>
+          <div class="search">
+            <input type="search" name="" id="search" placeholder="Rechercher un produit" hidden>
+            <i class="fa-solid fa-magnifying-glass" hidden></i>
+        </div>
+
+       
         <?php
                 $subcategoryandpacks = "https://generateur.cloudsteroids.com/public/api/allpackofsubcategories";
                 $subcategoryandpacks = file_get_contents($subcategoryandpacks);
